@@ -14,21 +14,28 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image1]: ./writeup_images/10_random.jpg "10 Random Images"
+[image2]: ./writeup_images/1_per_class.jpg "1 per Cass"
+[image3]: ./writeup_images/Training_Class_Distribution.jpg "Training Class Distribution"
+[image4]: ./writeup_images/Validation_Class_Distribution.jpg             
+"Validation_Class_Distribution"
+[image5]: ./writeup_images/Test_Class_Distribution.jpg "Test_Class_Distribution"
+[image6]: ./writeup_images/train_table.png "Train Table"
+[image7]: ./writeup_images/org_hist.jpg "Original and Histogram Equalized"
+[image8]: ./writeup_images/gray.jpg "Gray"
+[image9]: ./writeup_images/flip2.jpg "Flip 2"
+[image10]: ./writeup_images/flip1.jpg "Flip 1"
+[image11]: ./writeup_images/rotate180.jpg "Rotate 180"
+[image12]: ./writeup_images/rotate_bright.jpg "Rotate and Brightness"
+[image13]: ./writeup_images/New_Training_Class_Distribution.jpg "Rotate and Brightness"
+
 
 ---
 ### Writeup / README
 
 ### 1. Data Set Summary & Exploration
 
-I used the pandas library to calculate summary statistics of the traffic
+I used the numpy library to calculate summary statistics of the traffic
 signs data set:
 
 * The training set contains 34799 images
@@ -39,35 +46,60 @@ signs data set:
 
 #### 2. Visualization of the dataset.
 
-Here is an exploratory visualization of the data set. First 10 random images, then 1 example image of each class. Following 3 bar charts showing how the train/validation/test data is distributed over the 43 classes and a table showing classID, name and frequency in the train set (ordered with frequency low -> high).
+Here is an exploratory visualization of the data set. First 10 random images, then 1 example image of each class. Following 3 histogram bar charts showing how the train/validation/test data is distributed over the 43 classes and a table showing classID, name and frequency in the train set (ordered with frequency low -> high).
 
+_10 random images from the train set_
 ![alt text][image1]
+_1 image per class from the train set_
+![alt text][image2]
+_Train, Validation, Test distribution_
+![alt text][image3]
+![alt text][image4]
+![alt text][image5]
+_Table with classID distribution_
+![alt text][image6]
 
 ### Design and Test a Model Architecture
 
 #### 1. Description of preprocessing the image data. What techniques were chosen and why?
-#### if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-I tried to train the network with 3 different preprocess approaches:
+I tried to train the network with 3 different preprocessing approaches:
 * Plain RGB images (1)
 * Histogram equalized images (2)
 * Grayscale images (3)
 
-Here is an example of a traffic sign image before and after grayscaling.
+Here is an example of 15 traffic sign images before and after histogram equalization or grayscaling, respectively.
 
-![alt text][image2]
+![alt text][image7]
+![alt text][image8]
 
 As a last step before feeding the data to the network, I normalized the image data because ...
 
-I decided to generate additional data because as seen in the data exploration section, the dataset is quite unbalanced. I tried to obtain a more balanced dataset to prevent the network from making biased predictions towards classes with plenty of images. Besides, after looking at each class, one can easily obtain more data by flipping images form 2 classes which are y-symmetric to each other (e.g. ...)
+#### if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-To add more data to the the data set, I used the following techniques because ... 
+I decided to generate additional data because as seen in the data visualization section, the dataset is quite unbalanced. I tried to obtain a more balanced dataset to prevent the network from making biased predictions towards classes with plenty of images.
 
-Here is an example of an original image and an augmented image:
+To add more data to the the data set, I used the following techniques:
+* _(i)_ Flip images between 2 classes which are y-symmetric to each other (e.g. 36 <-> 37, ...)
+* _(ii)_ Flip images of classes which are y-symmetric with themself (e.g. 30, ...)
+* _(iii)_ Flip images (horizontal + vertical) of classes which are 180° rotation invariant
+* _(iv)_ Augment images of classes which are underrepresented in the train set (random rotate between -30°/+30° and change brightness with gamma correction)
 
-![alt text][image3]
+Here are examples of original images vs. augmented images for all of the above described 4 cases:
+_(i)_
+![alt text][image9]
+_(ii)_
+![alt text][image10]
+_(iii)_
+![alt text][image11]
+_(iv)_
+![alt text][image12]
 
 The new train set distribution looks like this:
+_Old_
+![alt text][image3]
+_New_
+![alt text][image13]
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
@@ -124,8 +156,8 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image14] ![alt text][image15] ![alt text][image16] 
+![alt text][image17] ![alt text][image18]
 
 The first image might be difficult to classify because ...
 
