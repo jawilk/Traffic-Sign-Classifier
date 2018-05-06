@@ -59,7 +59,7 @@ _10 random images from the train set_ <br />
 ![alt text][image1] <br />
 _1 image per class from the train set_ <br />
 ![alt text][image2] <br />
-_Train set distribution_ <br />
+_Training set distribution_ <br />
 ![alt text][image3] <br />
 _Validation set distribution_ <br />
 ![alt text][image4] <br />
@@ -82,7 +82,7 @@ Here is an example of 15 traffic sign images before and after histogram equaliza
 ![alt text][image7]
 ![alt text][image8]
 
-As a last step before feeding the data to the network, I normalized the image data because ...
+As a last step before feeding the data to the network, I normalized the image data using Min-Max scaling.
 
 #### if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
@@ -94,7 +94,7 @@ To add more data to the the data set, I used the following techniques:
 * _(iii)_ Flip images (horizontal + vertical) of classes which are 180° rotation invariant
 * _(iv)_ Augment images of classes which are underrepresented in the train set (random rotate between -30°/+30° and change brightness with gamma correction)
 
-Here are examples of original images vs. augmented images for all of the above described 4 cases:
+Here are examples of original images vs. augmented images for all of the above described 4 cases: <br />
 _(i)_ <br />
 ![alt text][image9] <br />
 _(ii)_ <br />
@@ -104,7 +104,7 @@ _(iii)_ <br />
 _(iv)_ <br />
 ![alt text][image12] <br />
 
-The new train set distribution looks like this:
+The new train set distribution looks like this: <br />
 _Old_ <br />
 ![alt text][image3] <br />
 _New_ <br />
