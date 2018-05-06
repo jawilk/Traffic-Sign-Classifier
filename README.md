@@ -17,8 +17,7 @@ The goals / steps of this project are the following:
 [image1]: ./writeup_images/10_random.jpg "10 Random Images"
 [image2]: ./writeup_images/1_per_class.jpg "1 per Cass"
 [image3]: ./writeup_images/Training_Class_Distribution.jpg "Training Class Distribution"
-[image4]: ./writeup_images/Validation_Class_Distribution.jpg             
-"Validation_Class_Distribution"
+[image4]: ./writeup_images/Validation_Class_Distribution.jpg "Validation_Class_Distribution"
 [image5]: ./writeup_images/Test_Class_Distribution.jpg "Test_Class_Distribution"
 [image6]: ./writeup_images/train_table.png "Train Table"
 [image7]: ./writeup_images/org_hist.jpg "Original and Histogram Equalized"
@@ -56,16 +55,18 @@ signs data set:
 
 Here is an exploratory visualization of the data set. First 10 random images, then 1 example image of each class. Following 3 histogram bar charts showing how the train/validation/test data is distributed over the 43 classes and a table showing classID, name and frequency in the train set (ordered with frequency low -> high).
 
-_10 random images from the train set_
-![alt text][image1]
-_1 image per class from the train set_
-![alt text][image2]
-_Train, Validation, Test distribution_
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
-_Table with classID distribution_
-![alt text][image6]
+_10 random images from the train set_ <br />
+![alt text][image1] <br />
+_1 image per class from the train set_ <br />
+![alt text][image2] <br />
+_Train set distribution_ <br />
+![alt text][image3] <br />
+_Validation set distribution_ <br />
+![alt text][image4] <br />
+_Test set distribution_ <br />
+![alt text][image5] <br />
+_Table with classID distribution_ <br />
+![alt text][image6] <br />
 
 ### Design and Test a Model Architecture
 
@@ -94,20 +95,20 @@ To add more data to the the data set, I used the following techniques:
 * _(iv)_ Augment images of classes which are underrepresented in the train set (random rotate between -30°/+30° and change brightness with gamma correction)
 
 Here are examples of original images vs. augmented images for all of the above described 4 cases:
-_(i)_
-![alt text][image9]
-_(ii)_
-![alt text][image10]
-_(iii)_
-![alt text][image11]
-_(iv)_
-![alt text][image12]
+_(i)_ <br />
+![alt text][image9] <br />
+_(ii)_ <br />
+![alt text][image10] <br />
+_(iii)_ <br />
+![alt text][image11] <br />
+_(iv)_ <br />
+![alt text][image12] <br />
 
 The new train set distribution looks like this:
-_Old_
-![alt text][image3]
-_New_
-![alt text][image13]
+_Old_ <br />
+![alt text][image3] <br />
+_New_ <br />
+![alt text][image13] <br />
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
@@ -137,8 +138,8 @@ My final model consisted of the following layers:
 
 **The approach:**
 
-My first model I used was a plain LeNet model.
-![alt text][image14]
+My first model I used was a plain LeNet model. <br />
+![alt text][image14] <br />
 
 This model does a quite good job at classifying handwritten characters/digits. So I decided to give it a shot at classifying traffic sign images. It turns out to be a good model and I sticked to it (with small modifications) till the end.
 
@@ -171,11 +172,11 @@ To train the final model, I used a batch size of 512, 320 epochs (with early sto
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are 16 new traffic sign images I took in switzerland:
+Here are 16 new traffic sign images I took in switzerland: <br />
 
-![alt text][image15]
+![alt text][image15] <br />
 
-These are almost euqivalent/similar to german ones. The model could have some issues due to downscaling (32x32). I added some images which might be hard to classify because they are occupied by stickers or bushes (e.g. images 13,16). Images 14 and 15 do not belong to the orginal training classes.
+These are almost euqivalent/similar to german ones. The model could have some issues due to downscaling (32x32). I added some images which might be hard to classify because they are occupied by stickers or bushes (e.g. images 12,15). Images 13 and 14 do not belong to the orginal training classes.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -215,17 +216,17 @@ The code for making predictions (top 5 softmax) on my final model is located at 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-_Example 1_
-![alt text][image16]
-_1 Layer Activation_
-![alt text][image17]
-_2 Layer Activation_
-![alt text][image18]
-_Example 2_
-![alt text][image19]
-_1 Layer Activation_
-![alt text][image20]
-_2 Layer Activation_
-![alt text][image21]
+_Example 1_ <br />
+![alt text][image16] <br />
+_1 Layer Activation_ <br />
+![alt text][image17] <br />
+_2 Layer Activation_ <br />
+![alt text][image18] <br />
+_Example 2_ <br />
+![alt text][image19] <br />
+_1 Layer Activation_ <br />
+![alt text][image20] <br />
+_2 Layer Activation_ <br />
+![alt text][image21] <br />
 
 
