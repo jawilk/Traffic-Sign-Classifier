@@ -28,9 +28,17 @@ The goals / steps of this project are the following:
 [image11]: ./writeup_images/rotate180.jpg "Rotate 180"
 [image12]: ./writeup_images/rotate_bright.jpg "Rotate and Brightness"
 [image13]: ./writeup_images/New_Training_Class_Distribution.jpg "Rotate and Brightness"
-
+[image14]: ./writeup_images/lenet.png "LeNet"
+[image15]: ./writeup_images/new_images.jpg "New Images"
+[image16]: ./writeup_images/example1.png "Example 1"
+[image17]: ./writeup_images/1activation1.png "1activation1"
+[image18]: ./writeup_images/1activation2.png "1activation2"
+[image19]: ./writeup_images/example2.png "Example 2"
+[image20]: ./writeup_images/2activation1.png "2activation1"
+[image21]: ./writeup_images/2activation2.png "2activation2"
 
 ---
+
 ### Writeup / README
 
 ### 1. Data Set Summary & Exploration
@@ -125,41 +133,49 @@ My final model consisted of the following layers:
 | Softmax				|        									|
  
 
+#### 3. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+**The approach:**
 
-To train the final model, I used a batch size of 512, 320 epochs (with early stopping) and dropout (0.5) after the 3rd convolution layer, 1st fully connected layer and 2nd fully connected layer. Besides that, I used adam optimizer with a learning rate of 0.001.
+My first model I used was a plain LeNet model.
+![alt text][image14]
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+This model does a quite good job at classifying handwritten characters/digits. So I decided to give it a shot at classifying traffic sign images. It turns out to be a good model and I sticked to it (with small modifications) till the end.
+
+After training with the plain model for 10 Epochs and a learning rate of 0.01 I got the following results:
+
+_RGB images:_
+* training set accuracy of 0.967
+* validation set accuracy of 0.881
+
+_Histogram equalized images:_
+* training set accuracy of 0.958
+* validation set accuracy of 0.903 
+
+_Grayscale images:_
+* training set accuracy of 0.970
+* validation set accuracy of 0.883
+
+In the following process I tried different filter sizes for both convolution layers and different numbers of neurons in the first and second fully connected layers. Besides that I tried adding a third convolution layer.
+Further I trained the model on both augmented and not augmented data. Going further I adjusted the learning late and increased the number of epochs gradually. Additionally I used dropout/early stopping to prevent more overfitting.
 
 My final model results were:
 * training set accuracy of 0.996
 * validation set accuracy of 0.979 
 * test set accuracy of 0.955
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+To train the final model, I used a batch size of 512, 320 epochs (with early stopping) and dropout (0.5) after the 3rd convolution layer, 1st fully connected layer and 2nd fully connected layer. Besides that, I used adam optimizer with a learning rate of 0.001.
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
 
 ### Test a Model on New Images
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+Here are 16 new traffic sign images I took in switzerland:
 
-![alt text][image14] ![alt text][image15] ![alt text][image16] 
-![alt text][image17] ![alt text][image18]
+![alt text][image15]
 
-The first image might be difficult to classify because ...
+These are almost euqivalent/similar to german ones. The model could have some issues due to downscaling (32x32). I added some images which might be hard to classify because they are occupied by stickers or bushes (e.g. images 13,16). Images 14 and 15 do not belong to the orginal training classes.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -167,33 +183,49 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
+| Yield      		| Yield  									| 
+|   Roundabout mandatory   			| Roundabout mandatory						|
 | Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| 	Keep right      		| Keep right				 				|
+| Speed limit (30km/h)			|  Speed limit (30km/h)     							|
+| Children crossing        | Bicycles crossing                   | 
+|  No entry        | No entry                     |
+| Ahead only          | Ahead only                   |
+|  Road work         | Road work |             
+| Turn right ahead      | Turn right ahead          |
+| Priority road         | Priority road                   | 
+|   Speed limit (60km/h)     | Speed limit (60km/h)                      |
+| Yield          | Yield                      |
+|   None          |  Speed limit (30km/h)                  |
+| None      |  Dangerous curve to the right                    |
+| Keep right      |  Keep right                    |
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+
+
+
+The model was able to correctly guess 13 of the 14 traffic signs (except 2 None classes), which gives an accuracy of **92.857%**. This compares favorably to the accuracy on the test set of **95.5%**.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions (top 5 softmax) on my final model is located at the end of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
+---
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+
+_Example 1_
+![alt text][image16]
+_1 Layer Activation_
+![alt text][image17]
+_2 Layer Activation_
+![alt text][image18]
+_Example 2_
+![alt text][image19]
+_1 Layer Activation_
+![alt text][image20]
+_2 Layer Activation_
+![alt text][image21]
 
 
