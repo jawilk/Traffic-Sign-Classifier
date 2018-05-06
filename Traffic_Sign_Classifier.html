@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Traffic_Sign_Classifier3</title><script src="https://unpkg.com/jupyter-js-widgets@2.0.*/dist/embed.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Traffic_Sign_Classifier</title><script src="https://unpkg.com/jupyter-js-widgets@2.0.*/dist/embed.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11826,10 +11826,10 @@ div#notebook {
 
 
 
-<div id="ed7743f0-b4fb-46e7-9528-88b6b3d1dd3b"></div>
+<div id="79522ba1-8411-4022-9787-f076a2130d17"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ed7743f0-b4fb-46e7-9528-88b6b3d1dd3b');
+var element = $('#79522ba1-8411-4022-9787-f076a2130d17');
 IPython.OutputArea.prototype._should_scroll = function(lines) {
     return false;
 }
@@ -11850,8 +11850,6 @@ IPython.OutputArea.prototype._should_scroll = function(lines) {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load pickled data</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
-
-<span class="c1"># TODO: Fill this in based on where you saved the training and testing data</span>
 
 <span class="n">training_file</span> <span class="o">=</span> <span class="s1">&#39;data/train.p&#39;</span>
 <span class="n">validation_file</span> <span class="o">=</span> <span class="s1">&#39;data/valid.p&#39;</span>
@@ -11910,26 +11908,24 @@ IPython.OutputArea.prototype._should_scroll = function(lines) {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Replace each question mark with the appropriate value. </span>
-<span class="c1">### Use python, pandas or numpy methods rather than hard coding the results</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># TODO: Number of training examples</span>
+<span class="c1"># Number of training examples</span>
 <span class="n">n_train</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
 
-<span class="c1"># TODO: Number of validation examples</span>
+<span class="c1"># Number of validation examples</span>
 <span class="n">n_validation</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_valid</span><span class="p">)</span>
 
-<span class="c1"># TODO: Number of testing examples.</span>
+<span class="c1"># Number of testing examples.</span>
 <span class="n">n_test</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
 
 <span class="c1"># Number of own testing examples.</span>
 <span class="n">n_test_own</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_test_own</span><span class="p">)</span>
 
-<span class="c1"># TODO: What&#39;s the shape of an traffic sign image?</span>
+<span class="c1"># What&#39;s the shape of an traffic sign image?</span>
 <span class="n">image_shape</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 
-<span class="c1"># TODO: How many unique classes/labels there are in the dataset.</span>
+<span class="c1"># How many unique classes/labels there are in the dataset.</span>
 <span class="n">n_classes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_train</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of training examples =&quot;</span><span class="p">,</span> <span class="n">n_train</span><span class="p">)</span>
@@ -11993,7 +11989,6 @@ Number of classes = 43
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Data exploration visualization code goes here.</span>
-<span class="c1">### Feel free to use as many code cells as needed.</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -15670,16 +15665,13 @@ CwJruUEAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Preprocess the data here. It is required to normalize the data. Other preprocessing steps could include </span>
-<span class="c1">### converting to grayscale, etc.</span>
-<span class="c1">### Feel free to use as many code cells as needed.</span>
-<span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Normalize the image data with Min-Max scaling to a range of [0.1, 0.9]</span>
 <span class="sd">    :param image_data: The image data to be normalized</span>
 <span class="sd">    :return: Normalized image data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Min-Max scaling for image data</span>
+    <span class="c1"># Implement Min-Max scaling for image data</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(((</span><span class="n">image_data</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">image_data</span><span class="p">)))</span>
 </pre></div>
 
@@ -17935,7 +17927,7 @@ rkJggg==
     <span class="c1"># Flatten. Input = 5x5x16. Output = 400.</span>
     <span class="n">fc0</span>   <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">conv2_layer</span><span class="p">)</span>
     
-    <span class="c1"># TODO: Layer 3: Fully Connected. Input = 400. Output = 120.</span>
+    <span class="c1"># Layer 3: Fully Connected. Input = 400. Output = 120.</span>
     <span class="n">fc1_w</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">mu</span><span class="p">,</span> <span class="n">stddev</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">))</span>
     <span class="n">fc1_b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">120</span><span class="p">))</span>
     <span class="n">fc1</span>   <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">fc0</span><span class="p">,</span> <span class="n">fc1_w</span><span class="p">)</span> <span class="o">+</span> <span class="n">fc1_b</span>
@@ -18177,8 +18169,9 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
 <span class="n">X_valid_plain</span> <span class="o">=</span> <span class="n">X_valid</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">X_valid_plain</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">X_valid_plain</span><span class="p">)</span>
 
-<span class="c1">#!!!!!!!!!!!!!! x_train=np.array([((i-128.0)/128.0) for i in x_train]) !!!!!!!!!!!!!!</span>
-<span class="c1">####    X = (X / 255.).astype(np.float32)</span>
+<span class="c1"># Other normalization codes:</span>
+<span class="c1">## X_train=np.array([((i-128.0)/128.0) for i in X_train])</span>
+<span class="c1">##    X_train = (X_train / 255.).astype(np.float32)</span>
 
 
 <span class="c1"># Histogram equalization normalized</span>
@@ -18245,11 +18238,11 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
         <span class="n">channel</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">channel</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="c1"># Placeholder   </span>
+    <span class="c1"># Placeholders   </span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">channel</span><span class="p">))</span> <span class="c1"># Placeholder for train dataset</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">))</span> <span class="c1"># Placeholder for labels</span>
     <span class="n">one_hot_y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">nb_classes</span><span class="p">)</span>
-    <span class="n">keep_prob</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># Dropout</span>
+    <span class="n">keep_prob</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># Placeholder for dropout value</span>
     <span class="n">keep_prob_value</span> <span class="o">=</span> <span class="mf">1.0</span>
 
     <span class="c1"># Trainig pipeline</span>
@@ -20427,7 +20420,7 @@ Starting with doubling all filters in the convolution layers: <br />
 <span class="k">def</span> <span class="nf">LeNet2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">filter1</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">filter2</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">neurond1</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">neurond2</span><span class="o">=</span><span class="mi">84</span><span class="p">,</span> <span class="n">conv3</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">activ0</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">activ1</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">activ2</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>    
     
     <span class="n">nb_classes</span> <span class="o">=</span> <span class="mi">43</span> <span class="c1"># Classes</span>
-    <span class="c1"># Layer 1: Convolutional. Input = 32x32x3(/1). Output = 28x28xfilter1.</span>
+    <span class="c1"># Layer 1: Convolutional. Input = 32x32x3. Output = 28x28xfilter1.</span>
     <span class="c1">## Weight and bias</span>
     <span class="n">conv1_w</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">filter1</span><span class="p">],</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">mu</span><span class="p">,</span> <span class="n">stddev</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">))</span>
     <span class="n">conv1_b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">filter1</span><span class="p">))</span>
@@ -20459,7 +20452,7 @@ Starting with doubling all filters in the convolution layers: <br />
     <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;VALID&#39;</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">conv3</span><span class="p">:</span>
-        <span class="c1"># Layer 3: Convolutional. Output = 10x10x(filter2*2). !!!!!!!!!!!!!!!!!!!!!! CHANGE filter/Output !!!!!!!!!!!!!!!!!!!!</span>
+        <span class="c1"># Layer 3: Convolutional. Output = 3x3xfilter2.</span>
         <span class="c1">## Weight and bias</span>
         <span class="n">conv3_w</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">filter2</span><span class="p">,</span> <span class="n">filter2</span><span class="p">],</span>  <span class="n">mean</span> <span class="o">=</span> <span class="n">mu</span><span class="p">,</span> <span class="n">stddev</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">))</span>
         <span class="n">conv3_b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">filter2</span><span class="p">))</span>
@@ -20472,10 +20465,10 @@ Starting with doubling all filters in the convolution layers: <br />
             <span class="k">return</span> <span class="n">conv3_layer</span>
         <span class="n">conv3_layer1</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">conv3_layer</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">)</span>
        
-        <span class="c1"># Flatten. Input = 5x5xfilter2. Output = 5*5*filter2.</span>
+        <span class="c1"># Flatten. Input = 3x3xfilter2. Output = 3*3*filter2.</span>
         <span class="n">fc0</span>   <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">conv3_layer1</span><span class="p">)</span>
 
-        <span class="c1"># TODO: Layer 3: Fully Connected. Input = 5*5*filter2. Output = neurond1.</span>
+        <span class="c1"># Layer 3: Fully Connected. Input = 3*3*filter2. Output = neurond1.</span>
         <span class="n">fc1_w</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="n">filter2</span><span class="p">,</span> <span class="n">neurond1</span><span class="p">),</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">mu</span><span class="p">,</span> <span class="n">stddev</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">))</span>
         <span class="n">fc1_b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">neurond1</span><span class="p">))</span>
         <span class="n">fc1</span>   <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">fc0</span><span class="p">,</span> <span class="n">fc1_w</span><span class="p">)</span> <span class="o">+</span> <span class="n">fc1_b</span>
@@ -20505,7 +20498,7 @@ Starting with doubling all filters in the convolution layers: <br />
     <span class="c1"># Flatten. Input = 5x5xfilter2. Output = 5*5*filter2.</span>
     <span class="n">fc0</span>   <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">conv2_layer</span><span class="p">)</span>
     
-    <span class="c1"># TODO: Layer 3: Fully Connected. Input = 5*5*filter2. Output = neurond1.</span>
+    <span class="c1"># Layer 3: Fully Connected. Input = 5*5*filter2. Output = neurond1.</span>
     <span class="n">fc1_w</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="n">filter2</span><span class="p">,</span> <span class="n">neurond1</span><span class="p">),</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">mu</span><span class="p">,</span> <span class="n">stddev</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">))</span>
     <span class="n">fc1_b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">neurond1</span><span class="p">))</span>
     <span class="n">fc1</span>   <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">fc0</span><span class="p">,</span> <span class="n">fc1_w</span><span class="p">)</span> <span class="o">+</span> <span class="n">fc1_b</span>
@@ -24753,19 +24746,10 @@ Now that we have a nice model, let's try getting more data with augmenting the e
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">confusion_matrix</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
   
-<span class="c1">#tf.reset_default_graph()</span>
-<span class="n">pred_list</span> <span class="o">=</span> <span class="n">y_valid</span><span class="o">*</span><span class="mi">0</span>
-<span class="c1">#x = tf.placeholder(tf.float32, (None, 32, 32, 3)) # Placeholder for train dataset</span>
-<span class="c1">#keep_prob = tf.placeholder(tf.float32) # Dropout</span>
-    
-<span class="c1"># Trainig pipeline</span>
-<span class="c1">#logits = LeNet(x, nb_classes, keep_prob, mu, sigma, 3)</span>
-    
+<span class="n">pred_list</span> <span class="o">=</span> <span class="n">y_valid</span><span class="o">*</span><span class="mi">0</span>    
 <span class="n">_y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="o">=</span><span class="n">logits</span><span class="p">)</span>
 <span class="n">saver</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Saver</span><span class="p">()</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
-    <span class="c1">#sess.run(tf.global_variables_initializer())</span>
-    <span class="c1">#saver = tf.train.import_meta_graph(&#39;./lenet_1_model/RGBNormalized.meta&#39;)</span>
     <span class="n">checkpnt</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">latest_checkpoint</span><span class="p">(</span><span class="s1">&#39;./model1_hyper3_model/&#39;</span><span class="p">)</span>
     <span class="n">saver</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span> <span class="s1">&#39;./model1_hyper3_model/model1_hyper3.ckpt&#39;</span><span class="p">)</span>
     <span class="n">valid_accuracy</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">X_valid_plain</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">)</span>
@@ -24774,15 +24758,9 @@ Now that we have a nice model, let's try getting more data with augmenting the e
         <span class="n">new_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">X_valid_plain</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">prediction</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">_y</span><span class="p">],</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">new_img</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">})</span>
         <span class="n">pred_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
-        <span class="c1">#print(np.argmax(prediction))</span>
-        <span class="c1">#print(np.max(prediction))</span>
-        <span class="c1">#print(y_valid[i])</span>
-
 
 <span class="c1"># Compute confusion matrix</span>
-<span class="c1">#print(pred_list)</span>
 <span class="n">cnf_matrix</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">pred_list</span><span class="p">)</span>
-<span class="c1">#print(cnf_matrix)</span>
 
 <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cnf_matrix</span><span class="p">)</span>
 <span class="n">cm_table</span> <span class="o">=</span> <span class="n">table_confusion_matrix</span><span class="p">(</span><span class="n">cnf_matrix</span><span class="p">)</span>
@@ -27072,7 +27050,7 @@ Classes are y-symmetric to each other (e.g. 36&lt;-&gt;37). Classes are y-symmet
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load pickled data</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
 
-<span class="c1"># TODO: Fill this in based on where you saved the training and testing data</span>
+<span class="c1"># Fill this in based on where you saved the training and testing data</span>
 
 <span class="n">training_file</span> <span class="o">=</span> <span class="s1">&#39;data/train.p&#39;</span>
 <span class="n">validation_file</span> <span class="o">=</span> <span class="s1">&#39;data/valid.p&#39;</span>
@@ -45776,8 +45754,7 @@ Test = 0.95511
 <div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Load the images and plot them here.</span>
-<span class="c1">### Feel free to use as many code cells as needed.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Load the images and plot them</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Some example images, taken in switzerland.&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">40</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_test_own</span><span class="p">)):</span>
@@ -47692,9 +47669,7 @@ AAAAAADAFPHSDQAAAAAAAAAAAAAAADBF/z9C7dp6iANPxwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Run the predictions here and use the model to output the prediction for each image.</span>
-<span class="c1">### Make sure to pre-process the images with the same pre-processing pipeline used earlier.</span>
-<span class="c1">### Feel free to use as many code cells as needed.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Run the predictions here and use the model to output the prediction for each image</span>
 <span class="n">predic</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">y_test_own</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
 <span class="n">X_test_own_plain</span> <span class="o">=</span> <span class="n">X_test_own</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -47841,19 +47816,14 @@ a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
 <div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Print out the top five softmax probabilities for the predictions on the German traffic sign images found on the web. </span>
-<span class="c1">### Feel free to use as many code cells as needed.</span>
-<span class="c1">### Run the predictions here and use the model to output the prediction for each image.</span>
-<span class="c1">### Make sure to pre-process the images with the same pre-processing pipeline used earlier.</span>
-<span class="c1">### Feel free to use as many code cells as needed.</span>
-<span class="c1">#pred_list = y_valid*0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Print out the top five softmax probabilities for the predictions on the German traffic sign images found on the web</span>
+<span class="c1">## Feel free to use as many code cells as needed</span>
+<span class="c1">### Run the predictions here and use the model to output the prediction for each image</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;signnames.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;ClassId&#39;</span><span class="p">)</span>
 <span class="n">X_test_own_plain</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">X_test_own</span><span class="p">)</span>
 <span class="n">_y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="o">=</span><span class="n">logits</span><span class="p">)</span>
 <span class="n">saver</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Saver</span><span class="p">()</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
-    <span class="c1">#sess.run(tf.global_variables_initializer())</span>
-    <span class="c1">#saver = tf.train.import_meta_graph(&#39;./lenet_1_model/RGBNormalized.meta&#39;)</span>
     <span class="n">checkpnt</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">latest_checkpoint</span><span class="p">(</span><span class="s1">&#39;./model_last2_model/&#39;</span><span class="p">)</span>
     <span class="n">saver</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span> <span class="s1">&#39;./model_last2_model/model_last2.ckpt&#39;</span><span class="p">)</span>
     <span class="n">valid_accuracy</span><span class="p">,</span> <span class="n">valid_loss</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">X_valid_plain</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">)</span>
@@ -47870,9 +47840,6 @@ a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
         <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">X_test_own</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
         <span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Label: &#39;</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="s1">&#39;SignName&#39;</span><span class="p">][</span><span class="n">prob_top_5</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]],</span> <span class="s1">&#39;| Probability: &#39;</span><span class="p">,</span> <span class="n">prob_top_5</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-        <span class="c1">#print(labels[&#39;SignName&#39;][0])</span>
-        <span class="c1">#print(prob_top_5[0][0])</span>
-        <span class="c1">#print(prob_top_5[1][0])</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">prob_top_5</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.7</span><span class="p">))</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">prob_top_5</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
@@ -51761,28 +51728,6 @@ CpKkjqEgSeoYCpKkjqEgSeoYCpKkzv8HsAX2ywPisAsAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Project-Writeup">Project Writeup<a class="anchor-link" href="#Project-Writeup">&#182;</a></h3><p>Once you have completed the code implementation, document your results in a project writeup using this <a href="https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_template.md">template</a> as a guide. The writeup can be in a markdown or pdf file.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Note</strong>: Once you have completed all of the code implementations and successfully answered each question above, you may finalize your work by exporting the iPython Notebook as an HTML document. You can do this by using the menu above and navigating to  \n",
-    "<strong>File -&gt; Download as -&gt; HTML (.html)</strong>. Include the finished document along with this notebook as your submission.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h2 id="Step-4-(Optional):-Visualize-the-Neural-Network's-State-with-Test-Images">Step 4 (Optional): Visualize the Neural Network's State with Test Images<a class="anchor-link" href="#Step-4-(Optional):-Visualize-the-Neural-Network's-State-with-Test-Images">&#182;</a></h2><p>This Section is not required to complete but acts as an additional excersise for understaning the output of a neural network's weights. While neural networks can be a great learning device they are often referred to as a black box. We can understand what the weights of a neural network look like better by plotting their feature maps. After successfully training your neural network you can see what it's feature maps look like by plotting the output of the network's weight layers in response to a test stimuli image. From these plotted feature maps, it's possible to see what characteristics of an image the network finds interesting. For a sign, maybe the inner network feature maps react with high activation to the sign's boundary outline or to the contrast in the sign's painted symbol.</p>
 <p>Provided for you below is the function code that allows you to get the visualization output of any tensorflow weight layer you want. The inputs to the function should be a stimuli image, one used during training or a new one you provided, and then the tensorflow variable name that represents the layer's state during the training process, for instance if you wanted to see what the <a href="https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/6df7ae49-c61c-4bb2-a23e-6527e69209ec/lessons/601ae704-1035-4287-8b11-e2c2716217ad/concepts/d4aca031-508f-4e0b-b493-e7b706120f81">LeNet lab's</a> feature maps looked like for it's second convolutional layer you could enter conv2 as the tf_activation variable.</p>
@@ -51805,7 +51750,6 @@ CpKkjqEgSeoYCpKkjqEgSeoYCpKkzv8HsAX2ywPisAsAAAAASUVORK5CYII=
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Visualize your network&#39;s feature maps here.</span>
-<span class="c1">### Feel free to use as many code cells as needed.</span>
 
 <span class="c1"># image_input: the test image being fed into the network to produce the feature maps</span>
 <span class="c1"># tf_activation: should be a tf variable name used during your training procedure that represents the calculated state of a specific weight layer</span>
@@ -51813,19 +51757,11 @@ CpKkjqEgSeoYCpKkjqEgSeoYCpKkzv8HsAX2ywPisAsAAAAASUVORK5CYII=
 <span class="c1"># plt_num: used to plot out multiple different weight feature map sets on the same block, just extend the plt number for each new feature map entry</span>
 
 <span class="k">def</span> <span class="nf">outputFeatureMap</span><span class="p">(</span><span class="n">image_input</span><span class="p">,</span> <span class="n">tf_activation</span><span class="p">,</span> <span class="n">activation_min</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation_max</span><span class="o">=-</span><span class="mi">1</span> <span class="p">,</span><span class="n">plt_num</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="c1"># Here make sure to preprocess your image_input in a way your network expects</span>
-    <span class="c1"># with size, normalization, ect if needed</span>
-    <span class="c1"># image_input =</span>
-    <span class="c1"># Note: x should be the same name as your network&#39;s tensorflow data placeholder variable</span>
-    <span class="c1"># If you get an error tf_activation is not defined it may be having trouble accessing the variable from inside a function</span>
     <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
         <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
         <span class="n">saver</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">import_meta_graph</span><span class="p">(</span><span class="s1">&#39;model_last2.meta&#39;</span><span class="p">)</span>
         <span class="n">saver</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">latest_checkpoint</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">))</span>
         
-        <span class="c1">#checkpnt = tf.train.latest_checkpoint(&#39;./model_last2_model/&#39;)</span>
-        <span class="c1">#saver.restore(sess, &#39;./model_last2_model/model_last2.ckpt&#39;)</span>
-        <span class="c1">#activation = sess.run(conv3_layer,feed_dict={x: image_input})</span>
         <span class="n">activation</span> <span class="o">=</span> <span class="n">tf_activation</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">sess</span><span class="p">,</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span> <span class="p">:</span> <span class="n">image_input</span><span class="p">})</span>
         <span class="n">featuremaps</span> <span class="o">=</span> <span class="n">activation</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">plt_num</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
@@ -51841,32 +51777,25 @@ CpKkjqEgSeoYCpKkjqEgSeoYCpKkzv8HsAX2ywPisAsAAAAASUVORK5CYII=
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">activation</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,</span> <span class="n">featuremap</span><span class="p">],</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">activation_examples</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="n">activa</span> <span class="o">=</span> <span class="n">LeNet2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">filter1</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">filter2</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">conv3</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">activ0</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">new_img</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Org img&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">new_img</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">new_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">new_img</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Layer 1 Activation.&#39;</span><span class="p">)</span>
+    <span class="n">outputFeatureMap</span><span class="p">(</span><span class="n">new_img</span><span class="p">,</span> <span class="n">activa</span><span class="p">)</span>
+    <span class="n">activa2</span> <span class="o">=</span> <span class="n">LeNet2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">filter1</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">filter2</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">conv3</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">activ1</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Layer 2 Activation.&#39;</span><span class="p">)</span>
+    <span class="n">outputFeatureMap</span><span class="p">(</span><span class="n">new_img</span><span class="p">,</span> <span class="n">activa2</span><span class="p">)</span>
+
 <span class="c1"># Example 1</span>
-<span class="n">activa</span> <span class="o">=</span> <span class="n">LeNet2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">filter1</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">filter2</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">conv3</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">activ0</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">new_img</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="mi">1400</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Org img&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">new_img</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">new_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">new_img</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Layer 1 Activation.&#39;</span><span class="p">)</span>
-<span class="n">outputFeatureMap</span><span class="p">(</span><span class="n">new_img</span><span class="p">,</span> <span class="n">activa</span><span class="p">)</span>
-<span class="n">activa2</span> <span class="o">=</span> <span class="n">LeNet2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">filter1</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">filter2</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">conv3</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">activ1</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Layer 2 Activation.&#39;</span><span class="p">)</span>
-<span class="n">outputFeatureMap</span><span class="p">(</span><span class="n">new_img</span><span class="p">,</span> <span class="n">activa2</span><span class="p">)</span>
+<span class="n">activation_examples</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="mi">1400</span><span class="p">])</span>
 <span class="c1"># Example 2</span>
-<span class="n">activa</span> <span class="o">=</span> <span class="n">LeNet2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">filter1</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">filter2</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">conv3</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">activ0</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">new_img</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="mi">20000</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Org img&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">new_img</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">new_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">new_img</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Layer 1 Activation.&#39;</span><span class="p">)</span>
-<span class="n">outputFeatureMap</span><span class="p">(</span><span class="n">new_img</span><span class="p">,</span> <span class="n">activa</span><span class="p">)</span>
-<span class="n">activa2</span> <span class="o">=</span> <span class="n">LeNet2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">filter1</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">filter2</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">conv3</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">activ1</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Layer 2 Activation.&#39;</span><span class="p">)</span>
-<span class="n">outputFeatureMap</span><span class="p">(</span><span class="n">new_img</span><span class="p">,</span> <span class="n">activa2</span><span class="p">)</span>
+<span class="n">activation_examples</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="mi">20000</span><span class="p">])</span>
 </pre></div>
 
 </div>
