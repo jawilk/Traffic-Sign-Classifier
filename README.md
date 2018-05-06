@@ -140,6 +140,7 @@ My final model consisted of the following layers:
 
 My first model I used was a plain LeNet model. <br />
 ![alt text][image14] <br />
+Source: Yan LeCun
 
 This model does a quite good job at classifying handwritten characters/digits. So I decided to give it a shot at classifying traffic sign images. It turns out to be a good model and I sticked to it (with small modifications) till the end.
 
