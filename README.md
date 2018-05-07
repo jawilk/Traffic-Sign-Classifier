@@ -4,7 +4,7 @@
 **Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
+* Load the data set
 * Explore, summarize and visualize the data set
 * Augment the dataset
 * Design, train and test a model architecture over an iterative process
@@ -158,8 +158,8 @@ _Grayscale images:_
 * training set accuracy of 0.970
 * validation set accuracy of 0.883
 
-In the following process I tried different filter sizes for both convolution layers and different numbers of neurons in the first and second fully connected layers. Besides that I tried adding a third convolution layer.
-Further I trained the model on both augmented and not augmented data. Going further I adjusted the learning late and increased the number of epochs gradually. Additionally I used dropout/early stopping to prevent more overfitting.
+In the following process I tried different filter sizes for both convolution layers and different numbers of neurons in the 1st and 2nd fully connected layers. Besides that, I tried adding a 3rd convolution layer.
+Further I trained the model on both augmented and not augmented data. I adjusted the learning rate and increased the number of epochs gradually. Additionally, I used dropout/early stopping to prevent more overfitting.
 
 My final model results were:
 * training set accuracy of 0.996
@@ -206,11 +206,11 @@ Here are the results of the prediction:
 
 
 
-The model was able to correctly guess 13 of the 14 traffic signs (except 2 None classes), which gives an accuracy of **92.857%**. This compares favorably to the accuracy on the test set of **95.5%**.
+The model was able to correctly guess 13 of the 14 traffic signs (excluding 2 None classes), which gives an accuracy of **92.857%**. This compares favorably to the accuracy on the test set of **95.5%**.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions (top 5 softmax) on my final model is located at the end of the Ipython notebook.
+The code for making predictions (top 5 softmax) on my final model is located at the end of the Ipython notebook. The 16 images can be found in the "new_images/" directory or as a pickled file in the "data/" directory.
 
 ---
 
